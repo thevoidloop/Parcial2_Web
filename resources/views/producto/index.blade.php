@@ -5,17 +5,23 @@
 @section('contenido')
         <main>
                 <div class="container py-4">
-                        <h1>Ferreteria Coban</h1>
+                        <div class="text-center">
+                                <h1>Ferreteria Coban</h1>
+                        </div>
+                        <br><br><br>
                         <h2>Listado de Productos</h2>
-                        <a href="{{url('productos/create')}}" class="btn btn-primary btn-sm">Nuevo Producto</a>
-                        <br><br><br><br>
-
                         <form action="{{ url('/productos/search') }}" method="GET">
                                 <div class="mb-3 row">
-                                        <input type="text" name="query" placeholder="Buscar producto...">
-                                        
+                                        <div class="col-auto">
+                                            <input type="text" name="query" class="form-control" placeholder="Buscar producto...">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="submit" class="btn btn-success">Buscar</button>
+                                        </div> 
+                                        <div class="col-auto">
+                                                <a href="{{url('productos/create')}}" class="btn btn-primary">Nuevo Producto</a>
+                                        </div>
                                 </div>
-                                <button type="submit" class="btn btn-success">Buscar</button>
                         </form>
                         <table class="table table-hover">    
                             <thead>
